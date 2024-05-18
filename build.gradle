@@ -220,7 +220,9 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "Built-On-Java": "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
                 "Built-On": "${project.mc_version}-${project.forge_version}",
-                "FMLAT": "minefantasyreforged_at.cfg"
+                "FMLAT": "minefantasyreforged_at.cfg",
+                'FMLCorePluginContainsFMLMod': true,
+                'FMLCorePlugin': 'minefantasy.mfr.core.MixinLoader',
         ])
     }
 }
@@ -241,7 +243,9 @@ task sourceJar(type: Jar, dependsOn: classes) {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "Built-On-Java": "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
                 "Built-On": "${project.mc_version}-${project.forge_version}",
-                "FMLAT": "minefantasyreforged_at.cfg"
+                "FMLAT": "minefantasyreforged_at.cfg",
+                'FMLCorePluginContainsFMLMod': true,
+                'FMLCorePlugin': 'minefantasy.mfr.core.MixinLoader',
         ])
     }
 }
