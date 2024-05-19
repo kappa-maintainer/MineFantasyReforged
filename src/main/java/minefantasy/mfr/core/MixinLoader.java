@@ -3,8 +3,10 @@ package minefantasy.mfr.core;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unused")
 public class MixinLoader implements IEarlyMixinLoader, IFMLLoadingPlugin {
@@ -16,26 +18,32 @@ public class MixinLoader implements IEarlyMixinLoader, IFMLLoadingPlugin {
 	}
 
 	@Override
-	String[] getASMTransformerClass(){
+	public boolean shouldMixinConfigQueue(String mixinConfig) {
+		return mixinConfig.equals("mixins.minefantasyreforged.json");
+	}
+
+	@Override
+	public String[] getASMTransformerClass() {
+		return new String[0];
+	}
+
+	@Override
+	public String getModContainerClass() {
 		return null;
 	}
 
 	@Override
-	String getModContainerClass() {
+	public String getSetupClass() {
 		return null;
 	}
 
 	@Override
-	String getSetupClass() {
-		return null;
+	public void injectData(Map<String, Object> map) {
+
 	}
 
 	@Override
-	void injectData(Map<String, Object> var1) {}
-
-	@Override
-	String getAccessTransformerClass() {
+	public String getAccessTransformerClass() {
 		return null;
 	}
-
 }
